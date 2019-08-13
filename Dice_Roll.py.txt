@@ -1,0 +1,53 @@
+import random
+import time
+
+counta = 0
+number = 1
+
+one = 0
+two = 0
+three = 0
+four = 0
+five = 0
+six = 0
+
+roll = int(input('Number of rolls= '))
+
+while counta >= 0:
+    number += 1
+    print(number, end='\r')
+    if number == 6 :
+      number = 1
+    counta += 1
+    n = random.randint(1, 6)
+    #print(n)
+    if n == 1:
+        one += 1
+    if n == 2:
+        two += 1
+    if n == 3:
+        three += 1
+    if n == 4:
+        four += 1
+    if n == 5:
+        five += 1
+    if n == 6:
+        six += 1
+    if counta == roll:
+        break
+
+one_per = (one / roll) * 100
+two_per = (two / roll) * 100
+three_per = (three / roll) * 100
+four_per = (four / roll) * 100
+five_per = (five / roll) * 100
+six_per = (six / roll) * 100
+
+print('One ' + str(one_per) + '%\n'
+      'Two ' + str(two_per) + '%\n'
+      'Three ' + str(three_per) + '%\n'
+      'Four ' + str(four_per) + '%\n'
+      'Five ' + str(five_per) + '%\n'
+      'Six ' + str(six_per) + '%')
+
+print('Number of rolls: ' + str(roll))
